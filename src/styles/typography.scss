@@ -1,0 +1,14 @@
+@import "src/styles/variables";
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Inter, sans-serif;
+  font-weight: 900;
+}
+
+h2 {
+  color: $color-gray-900;
+  font-size: $font-size-xl;
+}
