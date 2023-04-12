@@ -1,44 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Paytient Frontend Assignment
 
-## Available Scripts
+We’re excited you’re interested in joining our team!
 
-In the project directory, you can run:
+## About this Exercise
 
-### `yarn start`
+You should expect to:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Spend a few hours of your time. We focus on outcomes, not output; but we want to set your expectations.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+At Paytient, we frequently work by implementing a design from Figma. This assignment will help us assess your ability to take a design and turn it into a TypeScript/React/Redux user experience.
 
-### `yarn test`
+## Design
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The design to implement can be found in this Figma project: https://www.figma.com/file/ZwwVBsm1IJsfFDzQZnuavc/Paytient-Homework-Assignment-Today-I-Learned-Reddit?node-id=0%3A1
 
-### `yarn build`
+NOTE: If you sign up with a free Figma account, you’ll have access to the Figma Inspect sidebar which provides specific color and measurement information as well as CSS snippets when you select the design elements.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The image asset exports are included in the `src/images` directory.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+# Install yarn
+npm install --global yarn
 
-### `yarn eject`
+# Install dependencies
+yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Start the app
+yarn start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Acceptance Criteria
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Use React, Redux, and TypeScript. This project was initialized using the Create React App template for TypeScript + Redux Toolkit. A couple of things were already added including Yarn v3 which we currently use at Paytient. Feel free to add any additional modules if that helps you build faster. Just be sure the solution uses React, Redux, and TypeScript.
+- Implement the Figma design using React. Though this is a small assignment, try to organize the components and code in a way that is mindful of scaling a typical frontend application. Feel free to use your favorite strategy for styles (CSS/SASS modules, `styled-components`, Tailwind, etc. ...whatever you prefer!)
+- For the list of articles to display, query https://www.reddit.com/r/todayilearned.json, and store the data in Redux.
+- When you’ve completed the project, commit the results using git and `git push` up to the same branch that you cloned.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Bonus
+
+- Add useful Jest tests for a React view, a Redux action creator, and a Redux reducer.
+- Add a “typecheck” script that checks for any TypeScript compilation errors (and passes).
+- Add an ESLint script that checks for lint errors and passes.
+- Add mobile responsiveness.
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
