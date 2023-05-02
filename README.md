@@ -36,11 +36,11 @@ yarn start
 - Use React, Redux, and TypeScript. This project was initialized using the Create React App template for TypeScript + Redux Toolkit. A couple of things were already added including Yarn v3 which we currently use at Paytient. Feel free to add any additional modules if that helps you build faster. Just be sure the solution uses React, Redux, and TypeScript.
 - Implement the Figma design using React. Though this is a small assignment, try to organize the components and code in a way that is mindful of scaling a typical frontend application. Feel free to use your favorite strategy for styles (CSS/SASS modules, `styled-components`, Tailwind, etc. ...whatever you prefer!)
 - For the list of articles to display, query https://www.reddit.com/r/todayilearned.json, and store the data in Redux.
-- When you’ve completed the project, commit the results using git and `git push` up to the same branch that you cloned.
+- Add Jest tests for a React view, a Redux action creator, and a Redux reducer.
+- When you’ve completed the project, commit the results using git and `git push` up to the same branch that you cloned. Then open the Tapioca invite link again, and click the button at the bottom to "Submit Work."
 
 Bonus
 
-- Add useful Jest tests for a React view, a Redux action creator, and a Redux reducer.
 - Add a “typecheck” script that checks for any TypeScript compilation errors (and passes).
 - Add an ESLint script that checks for lint errors and passes.
 - Add mobile responsiveness.
