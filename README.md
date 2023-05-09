@@ -12,7 +12,7 @@ At Paytient, we frequently work by implementing a design from Figma. This assign
 
 ## Design
 
-The design to implement can be found in this Figma project: https://www.figma.com/file/ZwwVBsm1IJsfFDzQZnuavc/Paytient-Homework-Assignment-Today-I-Learned-Reddit?node-id=0%3A1
+The design to implement can be found in this Figma project: https://www.figma.com/file/nAaPOk6y8fwMbiaZLdJ9AE/Paytient---Homework-Assignment---Today-I-Learned-(Reddit)?type=design&node-id=4-634&t=Dfn1rxdlndRFebak-0
 
 NOTE: If you sign up with a free Figma account, you’ll have access to the Figma Inspect sidebar which provides specific color and measurement information as well as CSS snippets when you select the design elements.
 
