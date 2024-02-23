@@ -5,7 +5,7 @@ technical or business requirements. Your job is to take a design and turn it
 into a functional user experience using TypeScript/React/Redux.
 
 Here are some general guidelines:
-- Spend a few hours of your time - max 4 hours ideally
+- Spend a few hours of your time (max 4 hours ideally)
 - Focus on the final outcome (we won't review your commit history)
 - Be prepared to walk us through your code
 - Perfection is not expected
@@ -17,7 +17,7 @@ When you've completed the project, commit the results and push them up to the
 same branch that you cloned. Open the Tapioca invite link again, and click
 the button at the bottom marked "Submit Work" to complete the exercise.
 
-Good luck!
+Good luck and have fun!
 
 ***
 
@@ -59,12 +59,13 @@ You can run the tests with:
 ```sh
 $ yarn test
 ```
+
 ## Design Materials
 
 The Figma design file is available here: https://tinyurl.com/paytient-figma. The
 image asset exports are included in the `src/images` directory.
 
-Tip: If you sign up with a free Figma account, you'll have access to the
+_Tip:_ If you sign up with a free Figma account, you'll have access to the
 Figma Inspect sidebar which provides specific color and measurement information
 as well as CSS snippets when you select the design elements.
 
