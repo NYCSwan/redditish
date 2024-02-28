@@ -8,7 +8,6 @@ Here are some general guidelines:
 - Spend a few hours of your time (max 4 hours ideally)
 - Focus on the final outcome (we won't review your commit history)
 - Be prepared to walk us through your code
-- Perfection is not expected
 
 This is a time-boxed exercise, but try to organize the components and code
 in a way that is mindful of scaling a typical frontend application.
@@ -28,7 +27,7 @@ template for [TypeScript](https://typescriptlang.org/) + [Redux Toolkit](https:/
 You will first need to install [Yarn](https://yarnpkg.com/):
 
 ```sh
-$ npm install --global yarn
+$ corepack enable
 ```
 
 Then install the app dependencies:
@@ -66,8 +65,7 @@ The Figma design file is available here: https://tinyurl.com/paytient-figma. The
 image asset exports are included in the `src/images` directory.
 
 _Tip:_ If you sign up with a free Figma account, you'll have access to the
-Figma Inspect sidebar which provides specific color and measurement information
-as well as CSS snippets when you select the design elements.
+Figma Inspect sidebar which provides color and measurement information.
 
 ***
 
@@ -76,7 +74,8 @@ as well as CSS snippets when you select the design elements.
 You have been tasked with building a simple Reddit-based web application that
 allows users to browse a collection of subreddits. When a user clicks on a
 link in the sidebar, the main feed should be updated to show the latest posts
-for the given subreddit. The upvotes button should link to the post on Reddit.
+for the given subreddit. The upvotes button should link back to the post on
+Reddit and format large upvote counts.
 
 Use the Reddit's public subreddit API `/r/{subreddit}.json` to query posts. All
 subreddits follow the same [Listing](https://www.reddit.com/dev/api/#listings) schema.
