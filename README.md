@@ -61,7 +61,7 @@ $ yarn test
 
 ## Design Materials
 
-The Figma design file is available here: https://tinyurl.com/paytient-figma. The
+The Figma design file is available here: https://tinyurl.com/paytient-reddit-figma. The
 image asset exports are included in the `src/images` directory.
 
 _Tip:_ If you sign up with a free Figma account, you'll have access to the
