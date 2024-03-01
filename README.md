@@ -1,52 +1,107 @@
 # Paytient Frontend Assignment
 
-We’re excited you’re interested in joining our team!
+At Paytient, we frequently work by implementing Figma design files along with
+technical or business requirements. Your job is to take a design and turn it
+into a functional user experience using TypeScript/React/Redux.
 
-## About this Exercise
+Here are some general guidelines:
+- Spend a few hours of your time (max 4 hours ideally)
+- Focus on the final outcome (we won't review your commit history)
+- Be prepared to walk us through your code
 
-You should expect to:
+This is a time-boxed exercise, but try to organize the components and code
+in a way that is mindful of scaling a typical frontend application.
 
-- Spend a few hours of your time. We focus on outcomes, not output; but we want to set your expectations.
+When you've completed the project, commit the results and push them up to the
+same branch that you cloned. Open the Tapioca invite link again, and click
+the button at the bottom marked "Submit Work" to complete the exercise.
 
-At Paytient, we frequently work by implementing a design from Figma. This assignment will help us assess your ability to take a design and turn it into a TypeScript/React/Redux user experience.
+Good luck and have fun!
 
-## Design
-
-The design to implement can be found in this Figma project: https://www.figma.com/file/nAaPOk6y8fwMbiaZLdJ9AE/Paytient---Homework-Assignment---Today-I-Learned-(Reddit)?type=design&node-id=4-634&t=Dfn1rxdlndRFebak-0
-
-NOTE: If you sign up with a free Figma account, you’ll have access to the Figma Inspect sidebar which provides specific color and measurement information as well as CSS snippets when you select the design elements.
-
-The image asset exports are included in the `src/images` directory.
+***
 
 ## Getting Started
 
+This project was initialized using the [Create React App](https://github.com/facebook/create-react-app)
+template for [TypeScript](https://typescriptlang.org/) + [Redux Toolkit](https://redux-toolkit.js.org/).
+You will first need to install [Yarn](https://yarnpkg.com/):
+
 ```sh
-# Install yarn
-npm install --global yarn
+corepack enable
+```
 
-# Install dependencies
-yarn
+Then install the app dependencies:
 
-# Start the app
+```sh
+yarn install
+```
+
+And finally, run the app:
+
+```sh
 yarn start
 ```
 
+If you look at the `package.json`, you will notice we have already installed some
+libraries that may be helpful. The exercise can be completed without any additional
+packages, but feel free to add anything that helps you build faster.
+
+This project already includes [Redux Toolkit](https://redux-toolkit.js.org/)
+which is a library we use extensively at Paytient. If you are less familiar with
+Redux, we strongly recommend you review the docs and the Counter example included
+in the project in `src/features/counter/*`.
+
+Lastly, we have also added [Jest](https://jestjs.io/) along with with
+[React Testing Library](https://testing-library.com) for testing React components.
+You can run the tests with:
+
+```sh
+yarn test
+```
+
+## Design Materials
+
+The Figma design file is available here: https://tinyurl.com/paytient-reddit-figma. The
+image asset exports are included in the `src/images` directory.
+
+_Tip:_ If you sign up with a free Figma account, you'll have access to the
+Figma Inspect sidebar which provides color and measurement information.
+
+***
+
+## Business Requirements
+
+You have been tasked with building a simple Reddit-based web application that
+allows users to browse a collection of subreddits. When a user clicks on a
+link in the sidebar, the main feed should be updated to show the latest posts
+for the given subreddit. The upvotes button should link back to the post on
+Reddit and format large upvote counts.
+
+Use the Reddit's public subreddit API `/r/{subreddit}.json` to query posts. All
+subreddits follow the same [Listing](https://www.reddit.com/dev/api/#listings) schema.
+For example: https://www.reddit.com/r/todayilearned.json will list posts for the
+`todayilearned` subreddit.
+
+Your application should support any list of subreddits, but here are some you can use:
+- `/r/todayilearned`
+- `/r/nevertellmetheodds`
+- `/r/images`
+- `/r/cats`
+- `/r/mademesmile`
+- `/r/mildlyinteresting`
+
 ## Acceptance Criteria
 
-- Use React, Redux, and TypeScript. This project was initialized using the Create React App template for TypeScript + Redux Toolkit. A couple of things were already added including Yarn v3 which we currently use at Paytient. Feel free to add any additional modules if that helps you build faster. Just be sure the solution uses React, Redux, and TypeScript.
-- Implement the Figma design using React. Though this is a small assignment, try to organize the components and code in a way that is mindful of scaling a typical frontend application. Feel free to use your favorite strategy for styles (CSS/SASS modules, `styled-components`, Tailwind, etc. ...whatever you prefer!)
-- For the list of articles to display, query https://www.reddit.com/r/todayilearned.json, and store the data in Redux.
-- Add Jest tests for a React view, a Redux action creator, and a Redux reducer.
-- When you’ve completed the project, commit the results using git and `git push` up to the same branch that you cloned. Then open the Tapioca invite link again, and click the button at the bottom to "Submit Work."
+- The app meets the business requirements above
+- The UI matches the Figma design
+- React, Redux, and TypeScript are all used
+- Tests are included for a React view and Redux action or reducer
 
-Bonus
+### _Bonus tasks_
 
-- Add a “typecheck” script that checks for any TypeScript compilation errors (and passes).
-- Add an ESLint script that checks for lint errors and passes.
-- Add mobile responsiveness.
+None of these are required, but are nice to include if you have time:
 
-## Learn More
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Error handling
+- Mobile responsiveness styles
+- A "typecheck" script that checks for any TypeScript compilation errors
+- An ESLint script that checks for lint errors and passes
