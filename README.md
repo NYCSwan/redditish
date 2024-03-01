@@ -27,19 +27,19 @@ template for [TypeScript](https://typescriptlang.org/) + [Redux Toolkit](https:/
 You will first need to install [Yarn](https://yarnpkg.com/):
 
 ```sh
-$ corepack enable
+corepack enable
 ```
 
 Then install the app dependencies:
 
 ```sh
-$ yarn install
+yarn install
 ```
 
 And finally, run the app:
 
 ```sh
-$ yarn start
+yarn start
 ```
 
 If you look at the `package.json`, you will notice we have already installed some
@@ -56,7 +56,7 @@ Lastly, we have also added [Jest](https://jestjs.io/) along with with
 You can run the tests with:
 
 ```sh
-$ yarn test
+yarn test
 ```
 
 ## Design Materials
