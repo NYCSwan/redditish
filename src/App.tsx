@@ -1,56 +1,95 @@
-import React from "react";
-import logo from "./logo.svg";
-import { Counter } from "./features/counter/Counter";
-import "./App.css";
+import { useEffect, useState } from "react";
+import "./App.scss";
+import { useAppDispatch, useAppSelector } from "./app/hooks";
+import NavListItem from "./components/NavListItem";
+import { SubredditPost } from "./features/subreddit/SubredditPost";
+import {
+  addTopicToVisited,
+  fetchSubredditsByTopic,
+  setTopic,
+} from "./features/subreddit/subredditSlice";
+import redditLogo from "./images/reddit-icon-name.svg";
 
 function App() {
+  const dispatch = useAppDispatch();
+  const { topic, visited, posts } = useAppSelector((state) => state.subreddit);
+  const [newTopic, setNewTopic] = useState<null | string>(null);
+
+  useEffect(() => {
+    if (!posts.length) {
+      dispatch(fetchSubredditsByTopic(topic));
+    }
+  }, [dispatch, posts, topic]);
+
+  const handleTopicChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setNewTopic(event.target.value);
+  };
+
+  const handleSubredditChange = (topic: string) => {
+    dispatch(setTopic(topic));
+    dispatch(addTopicToVisited());
+    dispatch(fetchSubredditsByTopic(topic));
+    setNewTopic(null);
+  };
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
+        <h1>{topic}</h1>
       </header>
+      <nav className="App-side-navigation">
+        <img alt="reddit logo. smiling snoo head" src={redditLogo} />
+
+        <ul className="App-nav-list">
+          {visited.map((subreddit) => (
+            <NavListItem
+              active={topic === subreddit}
+              key={subreddit}
+              handleClick={() => handleSubredditChange(subreddit)}
+            >
+              <span>r/{subreddit}</span>
+            </NavListItem>
+          ))}
+          <NavListItem active={!!newTopic?.length}>
+            <form
+              name="search-by-subreddit"
+              onSubmit={(event) => {
+                try {
+                  event.preventDefault();
+                  dispatch(setTopic(newTopic!));
+                  dispatch(addTopicToVisited());
+                  dispatch(fetchSubredditsByTopic(newTopic!));
+                } catch (error) {
+                  throw error;
+                } finally {
+                  setNewTopic(null);
+                }
+              }}
+            >
+              <input
+                name="new-topic"
+                type="text"
+                className="App-search"
+                placeholder="r/placeholder"
+                onChange={(event) => handleTopicChange(event)}
+                // onKeyDown={(event) => {
+                //   event.preventDefault();
+
+                // }}
+              />
+              <input type="submit" hidden />
+            </form>
+          </NavListItem>
+        </ul>
+      </nav>
+      <main className="Posts">
+        {posts.length && (
+          <ul>
+            {posts.map((post) => (
+              <SubredditPost key={post.id} post={post} />
+            ))}
+          </ul>
+        )}
+      </main>
     </div>
   );
 }
