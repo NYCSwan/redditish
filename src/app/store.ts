@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import counterReducer from "../features/counter/counterSlice";
+import subredditReducer from "../features/subreddit/subredditSlice";
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
+    subreddit: subredditReducer,
   },
 });
 
