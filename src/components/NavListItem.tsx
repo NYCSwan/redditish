@@ -1,4 +1,5 @@
 import icon from "../images/nav-icon.svg";
+
 export type NavListItemProps = {
   active: boolean;
   handleClick?: (event: React.MouseEvent<HTMLLIElement>) => void;
@@ -11,7 +12,7 @@ export default function NavListItem({
 }: NavListItemProps) {
   return (
     <li
-      className={`App-link ${active} ? "active" : ""}`}
+      className={`App-link ${active ? "active" : ""}`}
       onClick={(event: React.MouseEvent<HTMLLIElement>) =>
         handleClick && handleClick(event)
       }

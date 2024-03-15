@@ -59,6 +59,7 @@ export const subredditSlice = createSlice({
     setTopic: (state, action: PayloadAction<string>) => {
       state.topic = action.payload;
       state.posts = [];
+      state.dist = 0;
     },
     addTopicToVisited: (state) => {
       state.visited.push(state.topic);

@@ -13,7 +13,7 @@ import redditLogo from "./images/reddit-icon-name.svg";
 function App() {
   const dispatch = useAppDispatch();
   const { topic, visited, posts } = useAppSelector((state) => state.subreddit);
-  const [newTopic, setNewTopic] = useState<null | string>(null);
+  const [newTopic, setNewTopic] = useState<undefined | string>(undefined);
 
   useEffect(() => {
     if (!posts.length) {
@@ -21,15 +21,22 @@ function App() {
     }
   }, [dispatch, posts, topic]);
 
-  const handleTopicChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSetNewTopic = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewTopic(event.target.value);
   };
 
-  const handleSubredditChange = (topic: string) => {
-    dispatch(setTopic(topic));
-    dispatch(addTopicToVisited());
-    dispatch(fetchSubredditsByTopic(topic));
-    setNewTopic(null);
+  const clearNewTopic = () => {
+    setNewTopic(undefined);
+  };
+  const handleSubredditChange = async (topic: string) => {
+    try {
+      dispatch(setTopic(topic));
+      await dispatch(fetchSubredditsByTopic(topic));
+    } catch (error) {
+      throw error;
+    } finally {
+      clearNewTopic();
+    }
   };
   return (
     <div className="App">
@@ -53,15 +60,10 @@ function App() {
             <form
               name="search-by-subreddit"
               onSubmit={(event) => {
-                try {
-                  event.preventDefault();
-                  dispatch(setTopic(newTopic!));
+                event.preventDefault();
+                if (newTopic) {
+                  handleSubredditChange(newTopic);
                   dispatch(addTopicToVisited());
-                  dispatch(fetchSubredditsByTopic(newTopic!));
-                } catch (error) {
-                  throw error;
-                } finally {
-                  setNewTopic(null);
                 }
               }}
             >
@@ -70,19 +72,16 @@ function App() {
                 type="text"
                 className="App-search"
                 placeholder="r/placeholder"
-                onChange={(event) => handleTopicChange(event)}
-                // onKeyDown={(event) => {
-                //   event.preventDefault();
-
-                // }}
+                onChange={(event) => handleSetNewTopic(event)}
               />
               <input type="submit" hidden />
             </form>
           </NavListItem>
         </ul>
       </nav>
+
       <main className="Posts">
-        {posts.length && (
+        {!!posts.length && (
           <ul>
             {posts.map((post) => (
               <SubredditPost key={post.id} post={post} />
