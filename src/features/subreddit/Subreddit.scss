@@ -1,0 +1,51 @@
+@import "../../styles/variables.scss";
+
+.Post-card {
+  width: 680px;
+  height: 176px;
+  border: 1px solid $color-gray-200;
+  background-color: $color-white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 16px;
+  padding: 16px;
+  align-items: flex-start;
+}
+
+.Post-image {
+  height: 144px;
+  min-width: 144px;
+  width: 144px;
+  border-radius: $border-radius;
+  box-shadow: 0 0 0 4px $color-white;
+}
+.Post-text {
+  text-align: left;
+  font-weight: 500;
+  font-size: $font-size-md;
+  line-height: 20px;
+  padding: 0 16px;
+}
+.Post-button {
+  border: 1px solid $color-gray-300;
+  padding: 9px 16px 9px 16px;
+  border-radius: $border-radius-less;
+  font-weight: 500;
+  font-size: $font-size-md;
+  line-height: 20px;
+  align-self: flex-end;
+  > a {
+    text-decoration: none;
+    color: $color-gray-900;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+}

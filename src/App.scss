@@ -1,0 +1,105 @@
+@import "styles/variables";
+@import "styles/typography";
+
+.App {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  display: block;
+  height: 100vh;
+  width: 100vw;
+}
+
+.App-header {
+  height: 80px;
+  position: fixed;
+  top: 0;
+  background-color: $color-white;
+  width: 1183px;
+  margin-left: $nav-width;
+  padding: 1.5rem;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-bottom: 1px solid $color-gray-200;
+}
+.App-side-navigation {
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 16px 16px 21px 16px;
+  margin: 0;
+  width: $nav-width;
+  height: 100%;
+  border: 1px solid $color-gray-200;
+}
+.App-nav-list {
+  width: 100%;
+  padding-top: 40px;
+}
+
+.App-logo {
+  height: 1.5rem;
+  pointer-events: none;
+  align-self: center;
+}
+
+.App-link {
+  font-weight: 500;
+  color: $color-gray-900;
+  line-height: 1.25rem;
+  height: 2.5em;
+  width: initial;
+  padding: 8px 12px 8px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: none;
+  &.active {
+    color: $color-gray-900;
+    background-color: $color-gray-200;
+    font-weight: 700;
+    border-radius: $border-radius-less;
+  }
+  > .icon {
+    margin-right: 12px;
+  }
+}
+h1 {
+  font-size: $font-size-xl;
+  color: $color-gray-900;
+  line-height: 2rem;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: $font-size-md;
+}
+
+.Posts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 1183px;
+  height: fit-content;
+  margin: 0;
+  margin-left: $nav-width;
+  padding: 2rem;
+  padding-top: 111px;
+  overflow-y: auto;
+  background-color: $color-gray-100;
+}
