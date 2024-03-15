@@ -9,6 +9,7 @@ import {
   setTopic,
 } from "./features/subreddit/subredditSlice";
 import redditLogo from "./images/reddit-icon-name.svg";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -20,10 +21,6 @@ function App() {
       dispatch(fetchSubredditsByTopic(topic));
     }
   }, [dispatch, posts, topic]);
-
-  const handleSetNewTopic = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setNewTopic(event.target.value);
-  };
 
   const clearNewTopic = () => {
     setNewTopic(undefined);
@@ -72,7 +69,7 @@ function App() {
                 type="text"
                 className="App-search"
                 placeholder="r/placeholder"
-                onChange={(event) => handleSetNewTopic(event)}
+                onChange={(event) => setNewTopic(event.target.value)}
               />
               <input type="submit" hidden />
             </form>
@@ -81,13 +78,15 @@ function App() {
       </nav>
 
       <main className="Posts">
-        {!!posts.length && (
-          <ul>
-            {posts.map((post) => (
-              <SubredditPost key={post.id} post={post} />
-            ))}
-          </ul>
-        )}
+        <ErrorBoundary>
+          {!!posts.length && (
+            <ul>
+              {posts.map((post) => (
+                <SubredditPost key={post.id} post={post} />
+              ))}
+            </ul>
+          )}
+        </ErrorBoundary>
       </main>
     </div>
   );

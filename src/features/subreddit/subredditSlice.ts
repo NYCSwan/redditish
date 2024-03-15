@@ -1,19 +1,13 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "../../app/store";
-import { Reddit } from "./subredditApiResponseTypes";
+import { ChildData, Reddit } from "./subredditApiResponseTypes";
 
 export const BASE_URL = "https://www.reddit.com";
 
-export interface Post {
-  title: string;
-  link: string;
-  ups: number;
-  [x: string]: any; //TODO make ts happier
-}
 export interface SubredditState {
   topic: string;
-  posts: Post[];
+  posts: ChildData[];
   dist: number;
   visited: string[];
   status: "idle" | "loading" | "failed";
