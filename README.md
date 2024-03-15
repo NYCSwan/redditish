@@ -107,3 +107,13 @@ None of these are required, but are nice to include if you have time:
 - Mobile responsiveness styles
 - A "typecheck" script that checks for any TypeScript compilation errors
 - An ESLint script that checks for lint errors and passes
+
+## Submission Notes
+
+Hi there, I wanted to add a quick note about my submission. I had a great time working on this project and look forward to speaking with folks about it. I've included a few notes below to help you understand my thought process and the decisions I made within the time limits (I maxed out at about 4 hours).
+
+- With more time I would refactor the list fetching logic to better account for scroll behavior and optimize the form handling to debounce the search input.
+- I would also add more tests to cover the form and list component behavior.
+- Finish the Error handling/boundary component and mobile responsiveness styles.
+
+Cheers and thanks for the opportunity!
