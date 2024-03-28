@@ -1,25 +1,6 @@
-# Paytient Frontend Assignment
+# Frontend Assignment
 
-At Paytient, we frequently work by implementing Figma design files along with
-technical or business requirements. Your job is to take a design and turn it
-into a functional user experience using TypeScript/React/Redux.
-
-Here are some general guidelines:
-
-- Spend a few hours of your time (max 4 hours ideally)
-- Focus on the final outcome (we won't review your commit history)
-- Be prepared to walk us through your code
-
-This is a time-boxed exercise, but try to organize the components and code
-in a way that is mindful of scaling a typical frontend application.
-
-When you've completed the project, commit the results and push them up to the
-same branch that you cloned. Open the Tapioca invite link again, and click
-the button at the bottom marked "Submit Work" to complete the exercise.
-
-Good luck and have fun!
-
-***
+Reddit Feed
 
 ## Getting Started
 
@@ -48,9 +29,7 @@ libraries that may be helpful. The exercise can be completed without any additio
 packages, but feel free to add anything that helps you build faster.
 
 This project already includes [Redux Toolkit](https://redux-toolkit.js.org/)
-which is a library we use extensively at Paytient. If you are less familiar with
-Redux, we strongly recommend you review the docs and the Counter example included
-in the project in `src/features/counter/*`.
+for state management. You can find the Redux store in `src/app/store.ts`.
 
 Lastly, we have also added [Jest](https://jestjs.io/) along with with
 [React Testing Library](https://testing-library.com) for testing React components.
@@ -59,16 +38,6 @@ You can run the tests with:
 ```sh
 yarn test
 ```
-
-## Design Materials
-
-The Figma design file is available here: <https://tinyurl.com/paytient-reddit-figma>. The
-image asset exports are included in the `src/images` directory.
-
-_Tip:_ If you sign up with a free Figma account, you'll have access to the
-Figma Inspect sidebar which provides color and measurement information.
-
-***
 
 ## Business Requirements
 
@@ -107,13 +76,3 @@ None of these are required, but are nice to include if you have time:
 - Mobile responsiveness styles
 - A "typecheck" script that checks for any TypeScript compilation errors
 - An ESLint script that checks for lint errors and passes
-
-## Submission Notes
-
-Hi there, I wanted to add a quick note about my submission. I had a great time working on this project and look forward to speaking with folks about it. I've included a few notes below to help you understand my thought process and the decisions I made within the time limits (I maxed out at about 4 hours).
-
-- With more time I would refactor the list fetching logic to better account for scroll behavior and optimize the form handling to debounce the search input.
-- I would also add more tests to cover the form and list component behavior.
-- Finish the Error handling/boundary component and mobile responsiveness styles.
-
-Cheers and thanks for the opportunity!
